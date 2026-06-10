@@ -1,0 +1,63 @@
+{
+  "domain": "alice.agent",
+  "name": "Alice's Agent",
+  "owner": "Alice",
+  "version": "1.0.0",
+  "generator": "OpenClaw Gateway v3.1.0",
+  "publicKey": {
+    "algorithm": "ed25519",
+    "fingerprint": "ed25519:REPLACE_WITH_ACTUAL_FINGERPRINT",
+    "full": null
+  },
+  "capabilities": [
+    {
+      "id": "chat",
+      "name": "Conversation",
+      "description": "General-purpose conversational AI assistant",
+      "input": ["text", "image"],
+      "output": ["text", "html"],
+      "interfaces": ["chat", "api"],
+      "languages": ["en", "zh"],
+      "pricing": { "model": "free" }
+    },
+    {
+      "id": "code-review",
+      "name": "Code Review",
+      "description": "Review code for bugs, security issues, and style",
+      "input": ["text", "file"],
+      "output": ["text", "html"],
+      "interfaces": ["api"],
+      "languages": ["en"],
+      "pricing": { "model": "per_use", "details": "0.01 USD per review" }
+    },
+    {
+      "id": "translation",
+      "name": "Translation",
+      "description": "Translate between English and Chinese",
+      "input": ["text"],
+      "output": ["text"],
+      "interfaces": ["chat", "api"],
+      "languages": ["en", "zh"],
+      "pricing": { "model": "free" }
+    }
+  ],
+  "relationships": [
+    {
+      "type": "peer",
+      "id": "agent:bob.agent",
+      "name": "Bob's Agent",
+      "trust": "verified",
+      "since": "2026-03-01T00:00:00Z"
+    }
+  ],
+  "policies": {
+    "privacy": "https://alice.agent/policies/privacy",
+    "terms": "https://alice.agent/policies/terms",
+    "dataRetention": "7 days",
+    "thirdPartySharing": false
+  },
+  "availability": {
+    "status": "online",
+    "uptime": "99.9%"
+  }
+}
